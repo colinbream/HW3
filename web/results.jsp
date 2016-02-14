@@ -71,6 +71,6 @@
             
             
         </table> 
-            <a href="http://localhost:8080/salaryCalculator/">Back to Calculator</a>
+            <a href="http://msci3300-s1601.cloudapp.net:8080/salaryCalculator/">Back to Calculator</a>
     </body>
 </html>
