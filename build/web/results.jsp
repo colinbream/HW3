@@ -14,32 +14,45 @@
     </head>
     
     <%
-        int hours=Integer.parseInt(request.getParameter("hours"));
+        int hoursworked=Integer.parseInt(request.getParameter("hoursworked"));
         double rate=Double.parseDouble(request.getParameter("rate"));
         double pretax=Double.parseDouble(request.getParameter("pretax"));
         double posttax=Double.parseDouble(request.getParameter("posttax"));
         int overtimeHours=0;
-            if (hours>40)
-                overtimeHours= (hours-40);
+        int regularHours=0;
         double overtimeRate=0;
-            if (hours>40)
-                overtimeRate= (rate*1.5); 
-        double grossPay=(rate*hours)+(overtimeRate*overtimeHours); 
+        double regularPay=0;
+        double overtimePay=0;
+        double grossPay=0;
+        if (hoursworked>40)
+        {
+             regularHours=40;
+             overtimeHours= (hoursworked-40);
+             overtimeRate= (rate*1.5);
+             overtimePay= (overtimeHours*overtimeRate);
+             regularPay= (regularHours*rate);
+             grossPay= (regularPay+overtimePay);
+        }
+        else 
+        {   regularHours=hoursworked;
+            overtimeHours=0;
+            grossPay= (regularHours*rate);
+        }
         double pretaxpay= grossPay-pretax;
         double taxamount;
             if (grossPay<500)
-                taxamount = (.18*grossPay);
+                taxamount = (.18*pretaxpay);
             else 
-                taxamount = (.22*grossPay);
-        double posttaxpay= grossPay-taxamount;
-        double netpay= posttaxpay-pretax-posttax;
+                taxamount = (.22*pretaxpay);
+        double posttaxpay= pretaxpay-taxamount;
+        double netpay= posttaxpay-posttax;
         
         %> 
    
     <body>
         <h1>Salary Info</h1>
         <table>
-            <tr><td>Total Hours Worked:</td><td><input type="text" name="hours" value="<%=hours%>" disabled="disabled"></td></tr>
+            <tr><td>Total Hours Worked:</td><td><input type="text" name="hoursworked" value="<%=hoursworked%>" disabled="disabled"></td></tr>
             <tr><td>Hourly Rate:</td><td><input type="text" name="rate" value="<%=rate%>" disabled="disabled"></td></tr>
             <tr><td># Hours Overtime:</td><td><input type="text" name="overtimeHours" value="<%=overtimeHours%>"></td></tr>
             <tr><td>Overtime Hourly Rate:</td><td><input type="text" name="overtimeRate" value="<%=overtimeRate%>"></td></tr>

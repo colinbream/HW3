@@ -17,7 +17,7 @@
         <h1>Simple Salary Calculator</h1> 
         <form name="form" method="post" action="results.jsp">
             <table>
-                <tr><td>Hours Worked:</td><td><input type="text" name="hours"></td></tr>
+                <tr><td>Hours Worked:</td><td><input type="text" name="hoursworked"></td></tr>
                 <tr><td>Hourly Pay:</td><td><input type="text" name="rate"></td></tr>
                 <tr><td>Pre-Tax Deduct:</td><td><input type="text" name="pretax"></td></tr>
                 <tr><td>Post-Tax Deduct:</td><td><input type="text" name="posttax"></td></tr>
