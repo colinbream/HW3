@@ -54,15 +54,15 @@
         <table>
             <tr><td>Total Hours Worked:</td><td><input type="text" name="hoursworked" value="<%=hoursworked%>" disabled="disabled"></td></tr>
             <tr><td>Hourly Rate:</td><td><input type="text" name="rate" value="<%=rate%>" disabled="disabled"></td></tr>
-            <tr><td># Hours Overtime:</td><td><input type="text" name="overtimeHours" value="<%=overtimeHours%>"></td></tr>
-            <tr><td>Overtime Hourly Rate:</td><td><input type="text" name="overtimeRate" value="<%=overtimeRate%>"></td></tr>
-            <tr><td>Gross Pay:</td><td><input type="text" name="grossPay" value="<%=grossPay%>"></td></tr>
+            <tr><td># Hours Overtime:</td><td><input type="text" name="overtimeHours" value="<%=overtimeHours%>"disabled="disabled" ></td></tr>
+            <tr><td>Overtime Hourly Rate:</td><td><input type="text" name="overtimeRate" value="<%=overtimeRate%>" disabled="disabled"></td></tr>
+            <tr><td>Gross Pay:</td><td><input type="text" name="grossPay" value="<%=grossPay%>" disabled="disabled"></td></tr>
             <tr><td>Pre-tax Deduct:</td><td><input type="text" name="pretax" value="<%=pretax%>" disabled="disabled"></td></tr>
-            <tr><td>Pre-tax Pay:</td><td><input type="text" name="pretaxpay" value="<%=pretaxpay%>"></td></tr>
-            <tr><td>Tax Amount:</td><td><input type="text" name="taxamount" value="<%=taxamount%>"></td></tr>
-            <tr><td>Post-tax Pay:</td><td><input type="text" name="posttaxpay" value="<%=posttaxpay%>"></td></tr>
+            <tr><td>Pre-tax Pay:</td><td><input type="text" name="pretaxpay" value="<%=pretaxpay%>" disabled="disabled"></td></tr>
+            <tr><td>Tax Amount:</td><td><input type="text" name="taxamount" value="<%=taxamount%>"disabled="disabled" ></td></tr>
+            <tr><td>Post-tax Pay:</td><td><input type="text" name="posttaxpay" value="<%=posttaxpay%>"disabled="disabled" ></td></tr>
             <tr><td>Post-tax Deduct:</td><td><input type="text" name="posttax" value="<%=posttax%>" disabled="disabled"></td></tr>
-            <tr><td>Net Pay:</td><td><input type="text" name="netpay" value="<%=netpay%>"></td></tr>
+            <tr><td>Net Pay:</td><td><input type="text" name="netpay" value="<%=netpay%>" disabled="disabled"></td></tr>
             
             
             
@@ -71,5 +71,6 @@
             
             
         </table> 
+            <a href="http://localhost:8080/salaryCalculator/">Back to Calculator</a>
     </body>
 </html>
